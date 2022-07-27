@@ -5,54 +5,51 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.android_app_umc.databinding.FragmentABinding
+import com.example.android_app_umc.repository.MenuLists
+import com.example.tablayout.base.BaseFragment
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+class FragmentA : BaseFragment<FragmentABinding>(FragmentABinding::inflate) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-/**
- * A simple [Fragment] subclass.
- * Use the [FragmentA.newInstance] factory method to
- * create an instance of this fragment.
- */
-class FragmentA : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+        val choice =arguments?.getInt(MENUCATEGORY_ITEM)
+        val viewpager = binding.lststore
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+        viewpager.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
+
+
+        choice?.let {
+            when(choice){
+                0 -> viewpager.adapter = FragmentAdapter(MenuLists.mainBread)
+                1 -> viewpager.adapter = FragmentAdapter(MenuLists.subBread)
+                2 -> viewpager.adapter = FragmentAdapter(MenuLists.mainBread)
+                3 -> viewpager.adapter = FragmentAdapter(MenuLists.subBread)
+                4 -> viewpager.adapter = FragmentAdapter(MenuLists.mainBread)
+                5 -> viewpager.adapter = FragmentAdapter(MenuLists.subBread)
+                6 -> viewpager.adapter = FragmentAdapter(MenuLists.mainBread)
+                7 -> viewpager.adapter = FragmentAdapter(MenuLists.subBread)
+                8 -> viewpager.adapter = FragmentAdapter(MenuLists.mainBread)
+                9 -> viewpager.adapter = FragmentAdapter(MenuLists.subBread)
+                10 -> viewpager.adapter = FragmentAdapter(MenuLists.mainBread)
+                11 -> viewpager.adapter = FragmentAdapter(MenuLists.subBread)
+                12 -> viewpager.adapter = FragmentAdapter(MenuLists.mainBread)
+                13 -> viewpager.adapter = FragmentAdapter(MenuLists.subBread)
+                else -> viewpager.adapter = FragmentAdapter(MenuLists.mainBread)
+            }
         }
+
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_a, container, false)
-    }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment FragmentA.
-         */
-        // TODO: Rename and change types and number of parameters
+        val MENUCATEGORY_ITEM = "menucateogry_item"
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
+        fun newInstance(position : Int) =
             FragmentA().apply {
                 arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+                    putInt(MENUCATEGORY_ITEM, position)
                 }
             }
     }

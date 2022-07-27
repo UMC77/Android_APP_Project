@@ -1,70 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="290dp"
-    android:id="@+id/cardView"
-    card_view:cardCornerRadius="20dp"
-    card_view:cardElevation="1dp">
+    android:layout_height="match_parent"
+    tools:context=".FragmentA">
 
-    <LinearLayout
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/lststore"
         android:layout_width="match_parent"
-        android:layout_height="255dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="5dp"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/store_list" />
 
-        <ImageView
-            android:id="@+id/iv_store"
-            android:layout_width="300dp"
-            android:layout_height="150dp"
-            android:layout_gravity="center"
-            android:background="@drawable/image2" />
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="55dp"
-            android:layout_marginLeft="55dp"
-            android:background="#E6E6E6"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/txtStore_name"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:background="#EEEEFA"
-                android:textColor="#000000"
-                android:paddingTop="3dp"
-                android:paddingBottom="3dp"
-                android:textSize="17dp"
-                android:text="가게 이름"/>
-
-            <TextView
-                android:id="@+id/txtStore_Star"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_marginTop="2dp"
-                android:background="#EEEEFA"
-                android:textColor="#666666"
-                android:paddingTop="3dp"
-                android:paddingBottom="3dp"
-                android:textSize="14dp"
-                android:text="가게 별점"/>
-
-            <TextView
-                android:id="@+id/txtStore_locate"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_marginTop="2dp"
-                android:background="#EEEEFA"
-                android:textColor="#666666"
-                android:paddingTop="3dp"
-                android:paddingBottom="3dp"
-                android:textSize="14dp"
-                android:text="가게 위치"/>
-        </LinearLayout>
-    </LinearLayout>
-
-</androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
