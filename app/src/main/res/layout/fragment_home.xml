@@ -47,7 +47,7 @@
             android:layout_marginStart="105dp"
             android:layout_marginEnd="2dp"
             android:layout_marginTop="10dp"
-            android:src="@drawable/Alarm" />
+            android:src="@drawable/alarm" />
 
         <ImageView
             android:layout_width="wrap_content"
