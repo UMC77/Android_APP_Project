@@ -1,12 +1,8 @@
 package com.example.android_app_umc
 
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentActivity
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.android_app_umc.databinding.ActivityMainBinding
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -24,9 +20,10 @@ class MainActivity : AppCompatActivity() {
         binding.viewpager.apply{
             adapter = PagerFragmentStateAdapter(context as FragmentActivity)
         }
-        //tablayout에 들어갈 recipeGategory 삽입
+
+        //tablayout에 들어갈 BreadCateogry 삽입
         TabLayoutMediator(binding.tabs,binding.viewpager){tab, position ->
-            tab.setText(RecipeCateogry.values()[position].categoryNameId)
+            tab.setText(BreadCateogry.values()[position].categoryNameId)
         }.attach()
 
     }

@@ -1,4 +1,4 @@
-package com.example.tablayout.base
+package com.example.android_app_umc.base
 
 import android.os.Bundle
 import android.view.LayoutInflater

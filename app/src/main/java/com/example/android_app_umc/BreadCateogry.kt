@@ -2,7 +2,7 @@ package com.example.android_app_umc
 
 import androidx.annotation.StringRes
 
-enum class RecipeCateogry(
+enum class BreadCateogry(
     @StringRes val categoryNameId: Int,
     @StringRes val categoryTypeId: Int
 ) {

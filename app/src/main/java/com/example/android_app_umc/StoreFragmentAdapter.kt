@@ -1,20 +1,19 @@
 package com.example.android_app_umc
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android_app_umc.databinding.StoreListBinding
-import com.example.android_app_umc.model.Menu
+import com.example.android_app_umc.model.BreadStore
 
-class FragmentAdapter(private val menuList : List<Menu>) : RecyclerView.Adapter<FragmentAdapter.MenuViewHolder>(){
+class StoreFragmentAdapter(private val breadStoreList : List<BreadStore>) : RecyclerView.Adapter<StoreFragmentAdapter.MenuViewHolder>(){
 
     inner class MenuViewHolder(private val binding: StoreListBinding): RecyclerView.ViewHolder(binding.root){
-        fun bind(menu : Menu){
-            binding.ivStore.setImageResource(menu.img)
-            binding.txtStoreName.text = menu.StoreName
-            binding.txtStoreStar.text = menu.StoreStar
-            binding.txtStoreLocate.text = menu.StoreLocate
+        fun bind(breadStore : BreadStore){
+            binding.ivStore.setImageResource(breadStore.img)
+            binding.txtStoreName.text = breadStore.StoreName
+            binding.txtStoreStar.text = breadStore.StoreStar
+            binding.txtStoreLocate.text = breadStore.StoreLocate
         }
 
     }
@@ -26,9 +25,9 @@ class FragmentAdapter(private val menuList : List<Menu>) : RecyclerView.Adapter<
     }
 
     override fun onBindViewHolder(holder: MenuViewHolder, position: Int) {
-        holder.bind(menuList[position])
+        holder.bind(breadStoreList[position])
     }
 
-    override fun getItemCount(): Int  = menuList.size
+    override fun getItemCount(): Int  = breadStoreList.size
 
 }
