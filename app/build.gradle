@@ -1,11 +1,16 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
     id 'kotlin-android-extensions'
 }
 
 android {
     compileSdk 32
+
+    viewBinding {
+        enabled true
+    }
 
     defaultConfig {
         applicationId "com.example.android_app_umc"
@@ -24,8 +29,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
     kotlinOptions {
         jvmTarget = '1.8'
@@ -47,6 +52,7 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
     implementation "androidx.viewpager2:viewpager2:1.0.0"
     implementation "androidx.recyclerview:recyclerview:1.2.1"
     implementation("androidx.fragment:fragment-ktx:1.5.1")
