@@ -4,7 +4,7 @@
     package="com.example.android_app_umc">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -16,6 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android_APP_UMC"
         tools:targetApi="31">
+        <activity
+            android:name=".MainStoreList"
+            android:exported="false" />
         <activity
             android:name=".AlarmActivity"
             android:exported="false" />
