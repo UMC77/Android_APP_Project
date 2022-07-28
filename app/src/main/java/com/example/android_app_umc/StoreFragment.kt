@@ -39,7 +39,6 @@ class StoreFragment : BaseFragment<StoreListFragmentBinding>(StoreListFragmentBi
 
     }
 
-
     companion object {
         val MENUCATEGORY_ITEM = "menucateogry_item"
         @JvmStatic
